@@ -9,11 +9,11 @@ connection = pymongo.MongoClient("homer.stuy.edu")
 db = connection["freudenbergJ-zorinM"]
 movies = db["movies"]
 
-r = requests.get("https://raw.githubusercontent.com/prust/wikipedia-movie-data/master/movies.json")
-data = r.json()
+# r = requests.get("https://raw.githubusercontent.com/prust/wikipedia-movie-data/master/movies.json")
+# data = r.json()
 
-for doc in data:
-    movies.insert_one(doc)
+# for doc in data:
+#     movies.insert_one(doc)
 
 
 def get_year(year):
@@ -52,13 +52,21 @@ def get_movie(title):
     return L
 
 if __name__ == '__main__':
-    print "Movies from 2016:"
+    print "\nMovies from 2016:\n"
     print get_year(2016)
+    print
     print "Movies by Christopher Nolan"
+    print
     print get_director("Christopher Nolan")
+    print
     print "Science Fiction Movies by Christopher Nolan"
-    print director_genre("Christopher Nolan", "Science Fiction")
+    print
+    print director_genre("Christopher Nolan", "Science fiction")
+    print
     print "2014 movies by Christopher Nolan"
-    print director_year("Christopher Nolan", "2014")
+    print
+    print director_year("Christopher Nolan", 2014)
+    print
     print "Info about Interstellar"
+    print
     print get_movie("Interstellar")
