@@ -1,9 +1,9 @@
 # Name of dataset: American Movies Scraped from Wikipedia
 # Description: Name and related info about American Movies that are listed on Wikipedia
 # Hyperlink: https://raw.githubusercontent.com/prust/wikipedia-movie-data/master/movies.json
-# Import mechanism:
+# Import mechanism: used requests to get json from file at link above and pymongo to insert
 
-import pymongo, requests, json
+import pymongo, requests
 
 connection = pymongo.MongoClient("homer.stuy.edu")
 db = connection["freudenbergJ-zorinM"]
